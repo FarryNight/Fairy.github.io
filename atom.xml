@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>welcome</title>
+  
+  <subtitle>(≧∇≦)ﾉ</subtitle>
+  <link href="http://farrynight.github.io/atom.xml" rel="self"/>
+  
+  <link href="http://farrynight.github.io/"/>
+  <updated>2022-09-29T15:19:34.939Z</updated>
+  <id>http://farrynight.github.io/</id>
+  
+  <author>
+    <name>Farry</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JavaMavenProject</title>
+    <link href="http://farrynight.github.io/2022/09/29/JavaMavenProject/"/>
+    <id>http://farrynight.github.io/2022/09/29/JavaMavenProject/</id>
+    <published>2022-09-29T14:58:02.000Z</published>
+    <updated>2022-09-29T15:19:34.939Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Enviroment&quot;&gt;&lt;a href=&quot;#Enviroment&quot; class=&quot;headerlink&quot; title=&quot;Enviroment&quot;&gt;&lt;/a&gt;Enviroment&lt;/h2&gt;&lt;p&gt;set up java and maven (use command</summary>
+        
+      
+    
+    
+    
+    <category term="Bavk End" scheme="http://farrynight.github.io/categories/Bavk-End/"/>
+    
+    
+    <category term="java" scheme="http://farrynight.github.io/tags/java/"/>
+    
+    <category term="development" scheme="http://farrynight.github.io/tags/development/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCodeDay3</title>
+    <link href="http://farrynight.github.io/2022/09/29/LeetCodeDay3/"/>
+    <id>http://farrynight.github.io/2022/09/29/LeetCodeDay3/</id>
+    <published>2022-09-29T14:25:19.000Z</published>
+    <updated>2022-09-29T15:19:17.303Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Question&quot;&gt;&lt;a href=&quot;#Question&quot; class=&quot;headerlink&quot; title=&quot;Question&quot;&gt;&lt;/a&gt;Question&lt;/h2&gt;&lt;h3 id=&quot;Largest-Perimeter-Triangle&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Algorithms" scheme="http://farrynight.github.io/categories/Algorithms/"/>
+    
+    
+    <category term="c++" scheme="http://farrynight.github.io/tags/c/"/>
+    
+    <category term="syntactic sugar" scheme="http://farrynight.github.io/tags/syntactic-sugar/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCodeDay2</title>
+    <link href="http://farrynight.github.io/2022/09/29/LeetCodeDay2/"/>
+    <id>http://farrynight.github.io/2022/09/29/LeetCodeDay2/</id>
+    <published>2022-09-29T14:25:14.000Z</published>
+    <updated>2022-09-29T15:19:24.061Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Question&quot;&gt;&lt;a href=&quot;#Question&quot; class=&quot;headerlink&quot; title=&quot;Question&quot;&gt;&lt;/a&gt;Question&lt;/h2&gt;&lt;h3 id=&quot;Number-of-1-Bits&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Algorithms" scheme="http://farrynight.github.io/categories/Algorithms/"/>
+    
+    
+    <category term="c++" scheme="http://farrynight.github.io/tags/c/"/>
+    
+    <category term="syntactic sugar" scheme="http://farrynight.github.io/tags/syntactic-sugar/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCodeDay1</title>
+    <link href="http://farrynight.github.io/2022/09/29/LeetCodeDay1/"/>
+    <id>http://farrynight.github.io/2022/09/29/LeetCodeDay1/</id>
+    <published>2022-09-29T14:25:10.000Z</published>
+    <updated>2022-09-29T15:17:28.278Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Question&quot;&gt;&lt;a href=&quot;#Question&quot; class=&quot;headerlink&quot; title=&quot;Question&quot;&gt;&lt;/a&gt;Question&lt;/h2&gt;&lt;h3</summary>
+        
+      
+    
+    
+    
+    <category term="Algorithms" scheme="http://farrynight.github.io/categories/Algorithms/"/>
+    
+    
+    <category term="c++" scheme="http://farrynight.github.io/tags/c/"/>
+    
+    <category term="syntactic sugar" scheme="http://farrynight.github.io/tags/syntactic-sugar/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>FullStackOpen_Part2</title>
+    <link href="http://farrynight.github.io/2022/09/29/FullStackOpen-Part2/"/>
+    <id>http://farrynight.github.io/2022/09/29/FullStackOpen-Part2/</id>
+    <published>2022-09-29T01:40:22.000Z</published>
+    <updated>2022-09-29T15:20:24.713Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Map&quot;&gt;&lt;a href=&quot;#Map&quot; class=&quot;headerlink&quot; title=&quot;Map&quot;&gt;&lt;/a&gt;Map&lt;/h2&gt;&lt;p&gt;map key value&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-bash&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Front End" scheme="http://farrynight.github.io/categories/Front-End/"/>
+    
+    
+    <category term="react" scheme="http://farrynight.github.io/tags/react/"/>
+    
+    <category term="nodejs" scheme="http://farrynight.github.io/tags/nodejs/"/>
+    
+    <category term="javascript" scheme="http://farrynight.github.io/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>FullStackOpen_Part1</title>
+    <link href="http://farrynight.github.io/2022/09/29/FullStackOpen-Part1/"/>
+    <id>http://farrynight.github.io/2022/09/29/FullStackOpen-Part1/</id>
+    <published>2022-09-29T01:40:16.000Z</published>
+    <updated>2022-09-29T15:18:58.805Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Start-React-Leaning&quot;&gt;&lt;a href=&quot;#Start-React-Leaning&quot; class=&quot;headerlink&quot; title=&quot;Start React Leaning&quot;&gt;&lt;/a&gt;Start React</summary>
+        
+      
+    
+    
+    
+    <category term="Front End" scheme="http://farrynight.github.io/categories/Front-End/"/>
+    
+    
+    <category term="react" scheme="http://farrynight.github.io/tags/react/"/>
+    
+    <category term="nodejs" scheme="http://farrynight.github.io/tags/nodejs/"/>
+    
+    <category term="javascript" scheme="http://farrynight.github.io/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>FullStackOpen_Part0</title>
+    <link href="http://farrynight.github.io/2022/09/29/FullStackOpen-Part0/"/>
+    <id>http://farrynight.github.io/2022/09/29/FullStackOpen-Part0/</id>
+    <published>2022-09-29T01:40:11.000Z</published>
+    <updated>2022-09-29T15:16:15.652Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Start&quot;&gt;&lt;a href=&quot;#Start&quot; class=&quot;headerlink&quot; title=&quot;Start&quot;&gt;&lt;/a&gt;Start&lt;/h2&gt;&lt;p&gt;It’s about how to start with nodejs , java-script ,</summary>
+        
+      
+    
+    
+    
+    <category term="Front End" scheme="http://farrynight.github.io/categories/Front-End/"/>
+    
+    
+    <category term="react" scheme="http://farrynight.github.io/tags/react/"/>
+    
+    <category term="nodejs" scheme="http://farrynight.github.io/tags/nodejs/"/>
+    
+    <category term="javascript" scheme="http://farrynight.github.io/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Blog Create</title>
+    <link href="http://farrynight.github.io/2022/09/29/Blog-Create/"/>
+    <id>http://farrynight.github.io/2022/09/29/Blog-Create/</id>
+    <published>2022-09-28T16:00:00.000Z</published>
+    <updated>2022-09-29T01:37:52.980Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;There have nothing</summary>
+        
+      
+    
+    
+    
+    <category term="Start" scheme="http://farrynight.github.io/categories/Start/"/>
+    
+    
+    <category term="blog create time" scheme="http://farrynight.github.io/tags/blog-create-time/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo Blog Hei!</title>
+    <link href="http://farrynight.github.io/2022/09/28/hello-world/"/>
+    <id>http://farrynight.github.io/2022/09/28/hello-world/</id>
+    <published>2022-09-28T02:45:26.718Z</published>
+    <updated>2022-09-29T01:38:10.720Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="IT" scheme="http://farrynight.github.io/categories/IT/"/>
+    
+    
+    <category term="hexo" scheme="http://farrynight.github.io/tags/hexo/"/>
+    
+  </entry>
+  
+</feed>

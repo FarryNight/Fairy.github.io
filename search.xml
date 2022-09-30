@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>JavaMavenProject</title>
+      <link href="/2022/09/29/JavaMavenProject/"/>
+      <url>/2022/09/29/JavaMavenProject/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Enviroment"><a href="#Enviroment" class="headerlink" title="Enviroment"></a>Enviroment</h2><p>set up java and maven (use command line)<br>attention kit tool version<br>setup java : java jdk , java se<br>java development kit , java standard edition<br>java -version </p><h3 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">mvn clean compilemvn clean <span class="token builtin class-name">test</span>mvn clean packagemvn clean <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>atention maven plugin may cause problem<br>cheek <a href="https://maven.apache.org/plugins/maven-shade-plugin/">https://maven.apache.org/plugins/maven-shade-plugin/</a></p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token operator">&lt;</span>build<span class="token operator">></span>    <span class="token operator">&lt;</span>plugins<span class="token operator">></span>      <span class="token operator">&lt;</span>plugin<span class="token operator">></span>        <span class="token operator">&lt;</span>groupId<span class="token operator">></span>org.apache.maven.plugins<span class="token operator">&lt;</span>/groupId<span class="token operator">></span>        <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>maven-shade-plugin<span class="token operator">&lt;</span>/artifactId<span class="token operator">></span>        <span class="token operator">&lt;</span>version<span class="token operator">></span><span class="token number">3.3</span>.<span class="token operator"><span class="token file-descriptor important">0</span>&lt;</span>/version<span class="token operator">></span>        <span class="token operator">&lt;</span>configuration<span class="token operator">></span>          <span class="token operator">&lt;</span><span class="token operator">!</span>-- put your configurations here --<span class="token operator">></span>        <span class="token operator">&lt;</span>/configuration<span class="token operator">></span>        <span class="token operator">&lt;</span>executions<span class="token operator">></span>          <span class="token operator">&lt;</span>execution<span class="token operator">></span>            <span class="token operator">&lt;</span>phase<span class="token operator">></span>package<span class="token operator">&lt;</span>/phase<span class="token operator">></span>            <span class="token operator">&lt;</span>goals<span class="token operator">></span>              <span class="token operator">&lt;</span>goal<span class="token operator">></span>shade<span class="token operator">&lt;</span>/goal<span class="token operator">></span>            <span class="token operator">&lt;</span>/goals<span class="token operator">></span>          <span class="token operator">&lt;</span>/execution<span class="token operator">></span>        <span class="token operator">&lt;</span>/executions<span class="token operator">></span>      <span class="token operator">&lt;</span>/plugin<span class="token operator">></span>    <span class="token operator">&lt;</span>/plugins<span class="token operator">></span><span class="token operator">&lt;</span>/build<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><a href="https://maven.apache.org/plugins/maven-shade-plugin/">https://maven.apache.org/plugins/maven-shade-plugin/</a></p><p><a href="https://maven.apache.org/run.html">https://maven.apache.org/run.html</a></p><p><a href="https://maven.apache.org/run-maven/index.html">https://maven.apache.org/run-maven/index.html</a></p><p><a href="https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html">https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html</a><br>###</p><h3 id=""><a href="#" class="headerlink" title=""></a></h3><h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> Bavk End </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+            <tag> development </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>LeetCodeDay3</title>
+      <link href="/2022/09/29/LeetCodeDay3/"/>
+      <url>/2022/09/29/LeetCodeDay3/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><h3 id="Largest-Perimeter-Triangle"><a href="#Largest-Perimeter-Triangle" class="headerlink" title="Largest Perimeter Triangle"></a>Largest Perimeter Triangle</h3><p>store the 1st largest number<br>store the 2st largest number<br>store the 3st largest number<br>how to ?</p><p>wrong thinking , need take care of all the numbers ! not only the largest three numbers !<br>so , sort them and start from end</p><p>Try to get a triangle with 3 biggest numbers.<br>If A[n-1] &lt; A[n-2] + A[n-3], we get a triangle.<br>If A[n-1] &gt;&#x3D; A[n-2] + A[n-3] &gt;&#x3D; A[i] + A[j], we cannot get any triangle with A[n-1]<br>repeat step2 and step3 with the left numbers.</p><p>check if it is a triangle : a &gt;&#x3D; b &gt;&#x3D; c, a,b,c can form a triangle if a &lt; b + c. (math)</p><p>return</p><h3 id="Soloution"><a href="#Soloution" class="headerlink" title="Soloution"></a>Soloution</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">int largestPerimeter<span class="token punctuation">(</span>vector<span class="token operator">&lt;</span>int<span class="token operator">>&amp;</span> n<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>        sort<span class="token punctuation">(</span> n.begin<span class="token punctuation">(</span><span class="token punctuation">)</span> , n.end<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">;</span>        <span class="token keyword">for</span> <span class="token punctuation">(</span> int i <span class="token operator">=</span> n.size<span class="token punctuation">(</span><span class="token punctuation">)</span> - <span class="token number">1</span> <span class="token punctuation">;</span> i <span class="token operator">></span> <span class="token number">1</span> <span class="token punctuation">;</span> i-- <span class="token punctuation">)</span><span class="token punctuation">&#123;</span>// i <span class="token operator">></span> <span class="token number">1</span> because n<span class="token punctuation">[</span>i-2<span class="token punctuation">]</span> <span class="token number">3</span> number            <span class="token keyword">if</span> <span class="token punctuation">(</span> n<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;</span> n <span class="token punctuation">[</span>i-1<span class="token punctuation">]</span> + n<span class="token punctuation">[</span>i-2<span class="token punctuation">]</span> <span class="token punctuation">)</span>                <span class="token builtin class-name">return</span> n<span class="token punctuation">[</span>i<span class="token punctuation">]</span> + n <span class="token punctuation">[</span>i-1<span class="token punctuation">]</span> + n<span class="token punctuation">[</span>i-2<span class="token punctuation">]</span> <span class="token punctuation">;</span>        <span class="token punctuation">&#125;</span>        <span class="token builtin class-name">return</span> <span class="token number">0</span> <span class="token punctuation">;</span>    <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="Find-Nearest-Point-That-Has-the-Same-X-or-Y-Coordinate"><a href="#Find-Nearest-Point-That-Has-the-Same-X-or-Y-Coordinate" class="headerlink" title="Find Nearest Point That Has the Same X or Y Coordinate"></a>Find Nearest Point That Has the Same X or Y Coordinate</h3><p>Return the index (0-indexed) of the valid point with the smallest Manhattan distance from your current location. If there are multiple, return the valid point with the smallest index. If there are no valid points, return -1.</p><p>The Manhattan distance between two points (x1, y1) and (x2, y2) is abs(x1 - x2) + abs(y1 - y2).</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">int nearestValidPoint<span class="token punctuation">(</span>int x, int y, vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span>int<span class="token operator">>></span><span class="token operator">&amp;</span> p<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>    int min <span class="token operator">=</span> <span class="token parameter variable">-1</span> , index <span class="token operator">=</span> <span class="token parameter variable">-1</span> <span class="token punctuation">;</span>    <span class="token keyword">for</span> <span class="token punctuation">(</span> int i <span class="token operator">=</span> <span class="token number">0</span> <span class="token punctuation">;</span> i <span class="token operator">&lt;</span> p.size<span class="token punctuation">(</span><span class="token punctuation">)</span>-1 <span class="token punctuation">;</span> i <span class="token operator">+=</span> <span class="token number">2</span> <span class="token punctuation">)</span><span class="token punctuation">&#123;</span>        <span class="token keyword">if</span> <span class="token punctuation">(</span> p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">==</span> x <span class="token operator">||</span> p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> x <span class="token operator">||</span>             p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">==</span> y <span class="token operator">||</span> p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> y            <span class="token punctuation">)</span><span class="token punctuation">&#123;</span>            if<span class="token punctuation">(</span>min <span class="token operator">==</span> <span class="token parameter variable">-1</span> <span class="token punctuation">)</span><span class="token punctuation">&#123;</span>                min <span class="token operator">=</span> abs<span class="token punctuation">(</span>x - p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> + abs<span class="token punctuation">(</span> y - p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">\</span>                index <span class="token operator">=</span> i <span class="token punctuation">;</span>                <span class="token builtin class-name">continue</span> <span class="token punctuation">;</span>            <span class="token punctuation">&#125;</span>            if<span class="token punctuation">(</span> min <span class="token operator">></span> abs<span class="token punctuation">(</span>x - p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> + abs<span class="token punctuation">(</span> y - p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">&#123;</span>                //min <span class="token operator">=</span> abs<span class="token punctuation">(</span>x - p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> + abs<span class="token punctuation">(</span> y - p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token punctuation">)</span> <span class="token punctuation">;</span>                index <span class="token operator">=</span> i <span class="token punctuation">;</span>            <span class="token punctuation">&#125;</span>        <span class="token punctuation">&#125;</span>    <span class="token punctuation">&#125;</span>    <span class="token builtin class-name">return</span> index <span class="token punctuation">;</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>3<br>4<br>[[1,2],[3,1],[2,4],[2,3],[4,4]]</p><p>3<br>4<br>[[2,3]]</p><p>can’t sove this example<br>need cosider the case : Same X or Y Coordinate</p><h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">class Solution <span class="token punctuation">&#123;</span>public:    int nearestValidPoint<span class="token punctuation">(</span>int x, int y, vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span>int<span class="token operator">>></span><span class="token operator">&amp;</span> p<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>        int min <span class="token operator">=</span> <span class="token parameter variable">-1</span> , index <span class="token operator">=</span> <span class="token parameter variable">-1</span> <span class="token punctuation">;</span>        <span class="token keyword">for</span> <span class="token punctuation">(</span> int i <span class="token operator">=</span> <span class="token number">0</span> <span class="token punctuation">;</span> i <span class="token operator">&lt;</span> p.size<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">;</span> i ++ <span class="token punctuation">)</span><span class="token punctuation">&#123;</span>            <span class="token keyword">if</span> <span class="token punctuation">(</span> p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">==</span> x <span class="token operator">||</span> p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> y<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>                if<span class="token punctuation">(</span>min <span class="token operator">==</span> <span class="token parameter variable">-1</span> <span class="token punctuation">)</span><span class="token punctuation">&#123;</span>                    min <span class="token operator">=</span> abs<span class="token punctuation">(</span>x - p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> + abs<span class="token punctuation">(</span> y - p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">\</span>                    index <span class="token operator">=</span> i <span class="token punctuation">;</span>                    <span class="token builtin class-name">continue</span> <span class="token punctuation">;</span>                <span class="token punctuation">&#125;</span>                if<span class="token punctuation">(</span> min <span class="token operator">></span> abs<span class="token punctuation">(</span>x - p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> + abs<span class="token punctuation">(</span> y - p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">&#123;</span>                    min <span class="token operator">=</span> abs<span class="token punctuation">(</span>x - p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> + abs<span class="token punctuation">(</span> y - p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token punctuation">)</span> <span class="token punctuation">;</span>                    index <span class="token operator">=</span> i <span class="token punctuation">;</span>                <span class="token punctuation">&#125;</span>            <span class="token punctuation">&#125;</span>        <span class="token punctuation">&#125;</span>        <span class="token builtin class-name">return</span> index <span class="token punctuation">;</span>    <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Algorithms </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> c++ </tag>
+            
+            <tag> syntactic sugar </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>LeetCodeDay2</title>
+      <link href="/2022/09/29/LeetCodeDay2/"/>
+      <url>/2022/09/29/LeetCodeDay2/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><h3 id="Number-of-1-Bits"><a href="#Number-of-1-Bits" class="headerlink" title="Number of 1 Bits"></a>Number of 1 Bits</h3><p>uint32_t: unsigned int</p><p><a href="https://en.wikipedia.org/wiki/Hamming_weight">https://en.wikipedia.org/wiki/Hamming_weight</a></p><p>need use operator &amp; ^ ( or not ? )</p><p>1001<br>1000</p><p>1000</p><p>0111</p><p>0000</p><h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">int hammingWeight<span class="token punctuation">(</span>uint32_t n<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>        //uint32_t s <span class="token operator">=</span> 0xffffffff <span class="token punctuation">;</span> //<span class="token punctuation">(</span> n <span class="token operator">&amp;</span> s <span class="token punctuation">)</span> + <span class="token punctuation">(</span> n <span class="token operator">>></span> s <span class="token punctuation">)</span>         int count <span class="token operator">=</span> <span class="token number">0</span> <span class="token punctuation">;</span>        <span class="token keyword">while</span> <span class="token punctuation">(</span> n <span class="token punctuation">)</span><span class="token punctuation">&#123;</span>            n <span class="token operator">&amp;</span><span class="token operator">=</span> <span class="token punctuation">(</span> n - <span class="token number">1</span> <span class="token punctuation">)</span> <span class="token punctuation">;</span>            count++ <span class="token punctuation">;</span>        <span class="token punctuation">&#125;</span>        <span class="token builtin class-name">return</span> count <span class="token punctuation">;</span>        //return n ? <span class="token number">1</span> + hammingWeight<span class="token punctuation">(</span>n <span class="token operator">&amp;</span> <span class="token punctuation">(</span>n - <span class="token number">1</span><span class="token punctuation">))</span> <span class="token builtin class-name">:</span> <span class="token number">0</span><span class="token punctuation">;</span>    <span class="token punctuation">&#125;</span>//n <span class="token operator">&amp;</span><span class="token operator">=</span> <span class="token punctuation">(</span> n - <span class="token number">1</span> <span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>O(1)<br>n &amp; (n - 1) drops the lowest set bit. It’s a neat little bit trick.</p><p>Let’s use n &#x3D; 00101100 as an example. This binary representation has three 1s.</p><p>If n &#x3D; 00101100, then n - 1 &#x3D; 00101011, so n &amp; (n - 1) &#x3D; 00101100 &amp; 00101011 &#x3D; 00101000. Count &#x3D; 1.</p><p>If n &#x3D; 00101000, then n - 1 &#x3D; 00100111, so n &amp; (n - 1) &#x3D; 00101000 &amp; 00100111 &#x3D; 00100000. Count &#x3D; 2.</p><p>If n &#x3D; 00100000, then n - 1 &#x3D; 00011111, so n &amp; (n - 1) &#x3D; 00100000 &amp; 00011111 &#x3D; 00000000. Count &#x3D; 3.</p><p>n is now zero, so the while loop ends, and the final count (the numbers of set bits) is returned.</p><p>from(<a href="https://leetcode.com/problems/number-of-1-bits/discuss/55255/C%2B%2B-Solution%3A-n-and-(n-1)">https://leetcode.com/problems/number-of-1-bits/discuss/55255/C%2B%2B-Solution%3A-n-and-(n-1)</a>)</p><h3 id="Subtract-the-Product-and-Sum-of-Digits-of-an-Integer"><a href="#Subtract-the-Product-and-Sum-of-Digits-of-an-Integer" class="headerlink" title="Subtract the Product and Sum of Digits of an Integer"></a>Subtract the Product and Sum of Digits of an Integer</h3><p>% can get value(last)<br>&#x2F; can get value(first)</p><h3 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution"></a>Solution</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">int subtractProductAndSum<span class="token punctuation">(</span>int n<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>        int <span class="token function">sum</span> , prod <span class="token punctuation">;</span>        <span class="token function">sum</span> <span class="token operator">=</span> n % <span class="token number">10</span> <span class="token punctuation">;</span>        prod <span class="token operator">=</span> n % <span class="token number">10</span> <span class="token punctuation">;</span>        n /<span class="token operator">=</span> <span class="token number">10</span> <span class="token punctuation">;</span>        <span class="token keyword">while</span> <span class="token punctuation">(</span> n <span class="token operator">></span> <span class="token number">0</span> <span class="token punctuation">)</span><span class="token punctuation">&#123;</span>            <span class="token function">sum</span> <span class="token operator">+=</span> n % <span class="token number">10</span> <span class="token punctuation">;</span>            prod *<span class="token operator">=</span> n % <span class="token number">10</span> <span class="token punctuation">;</span>            n /<span class="token operator">=</span> <span class="token number">10</span> <span class="token punctuation">;</span>        <span class="token punctuation">&#125;</span>        <span class="token builtin class-name">return</span> prod - <span class="token function">sum</span> <span class="token punctuation">;</span>    <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Algorithms </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> c++ </tag>
+            
+            <tag> syntactic sugar </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>LeetCodeDay1</title>
+      <link href="/2022/09/29/LeetCodeDay1/"/>
+      <url>/2022/09/29/LeetCodeDay1/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><h3 id="Count-Odd-Numbers-in-an-Interval-Range"><a href="#Count-Odd-Numbers-in-an-Interval-Range" class="headerlink" title="Count Odd Numbers in an Interval Range"></a>Count Odd Numbers in an Interval Range</h3><p>odd even | odd odd | even even | even Odd</p><h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">int countOdds<span class="token punctuation">(</span>int low, int high<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>        int i <span class="token operator">=</span> <span class="token number">0</span> <span class="token punctuation">;</span>        <span class="token keyword">while</span> <span class="token punctuation">(</span> low <span class="token operator">&lt;=</span> high <span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>            if<span class="token punctuation">(</span> low % <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">1</span> <span class="token operator">&amp;&amp;</span> low <span class="token operator">!=</span> <span class="token number">2</span> <span class="token punctuation">)</span><span class="token punctuation">&#123;</span>                i++<span class="token punctuation">;</span>                <span class="token assign-left variable">low</span><span class="token operator">+=</span><span class="token number">2</span><span class="token punctuation">;</span>            <span class="token punctuation">&#125;</span>            else<span class="token punctuation">&#123;</span>                <span class="token assign-left variable">low</span><span class="token operator">+=</span><span class="token number">1</span><span class="token punctuation">;</span>            <span class="token punctuation">&#125;</span>        <span class="token punctuation">&#125;</span>        <span class="token builtin class-name">return</span> i<span class="token punctuation">;</span> // Time Limit Exceeded    <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>Changes:</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">int countOdds<span class="token punctuation">(</span>int low, int high<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>        if<span class="token punctuation">(</span> low % <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">1</span> <span class="token operator">&amp;&amp;</span> low <span class="token operator">!=</span> <span class="token number">2</span> <span class="token punctuation">)</span><span class="token punctuation">&#123;</span>            low -<span class="token operator">=</span> <span class="token number">1</span> <span class="token punctuation">;</span>        <span class="token punctuation">&#125;</span>        if<span class="token punctuation">(</span> high % <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">1</span> <span class="token operator">&amp;&amp;</span> high <span class="token operator">!=</span> <span class="token number">2</span> <span class="token punctuation">)</span><span class="token punctuation">&#123;</span>            high <span class="token operator">+=</span> <span class="token number">1</span> <span class="token punctuation">;</span>        <span class="token punctuation">&#125;</span>        <span class="token builtin class-name">return</span> <span class="token punctuation">(</span> high - low <span class="token punctuation">)</span> / <span class="token number">2</span> <span class="token punctuation">;</span>    <span class="token punctuation">&#125;</span>//Accepted<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>best answer:</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">int countOdds<span class="token punctuation">(</span>int low, int high<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>    <span class="token builtin class-name">return</span> <span class="token punctuation">(</span>high + <span class="token number">1</span><span class="token punctuation">)</span> / <span class="token number">2</span> - low / <span class="token number">2</span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><h3 id="Average-Salary-Excluding-the-Minimum-and-Maximum-Salary"><a href="#Average-Salary-Excluding-the-Minimum-and-Maximum-Salary" class="headerlink" title="Average Salary Excluding the Minimum and Maximum Salary"></a>Average Salary Excluding the Minimum and Maximum Salary</h3><p>salary.size();</p><h3 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution"></a>Solution</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">class Solution <span class="token punctuation">&#123;</span>public:    double average<span class="token punctuation">(</span>vector<span class="token operator">&lt;</span>int<span class="token operator">>&amp;</span> salary<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>        int max , min <span class="token punctuation">;</span>        double <span class="token function">sum</span> <span class="token operator">=</span> <span class="token number">0</span> <span class="token punctuation">;</span>        max <span class="token operator">=</span> min <span class="token operator">=</span> salary<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>        for<span class="token punctuation">(</span> int i <span class="token operator">=</span> <span class="token number">0</span> <span class="token punctuation">;</span> i <span class="token operator">&lt;</span> salary.size<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">;</span> i++ <span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>            <span class="token keyword">if</span> <span class="token punctuation">(</span>max <span class="token operator">&lt;</span> salary<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token punctuation">)</span><span class="token punctuation">&#123;</span>                max <span class="token operator">=</span> salary<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>            <span class="token punctuation">&#125;</span>            <span class="token keyword">if</span> <span class="token punctuation">(</span> min <span class="token operator">></span> salary<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token punctuation">)</span><span class="token punctuation">&#123;</span>                min <span class="token operator">=</span> salary<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>            <span class="token punctuation">&#125;</span>            <span class="token function">sum</span> <span class="token operator">+=</span> salary<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token punctuation">;</span>        <span class="token punctuation">&#125;</span>        <span class="token builtin class-name">return</span> <span class="token punctuation">(</span> <span class="token function">sum</span> - max - min <span class="token punctuation">)</span> / <span class="token punctuation">(</span>salary.size<span class="token punctuation">(</span><span class="token punctuation">)</span> - <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">;</span>    <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Algorithms </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> c++ </tag>
+            
+            <tag> syntactic sugar </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>FullStackOpen_Part2</title>
+      <link href="/2022/09/29/FullStackOpen-Part2/"/>
+      <url>/2022/09/29/FullStackOpen-Part2/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><p>map key value</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token operator">&lt;</span>ul<span class="token operator">></span>  <span class="token punctuation">&#123;</span>notes.map<span class="token punctuation">((</span>note, i<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span>    <span class="token operator">&lt;</span>li <span class="token assign-left variable">key</span><span class="token operator">=</span><span class="token punctuation">&#123;</span>i<span class="token punctuation">&#125;</span><span class="token operator">></span>      <span class="token punctuation">&#123;</span>note.content<span class="token punctuation">&#125;</span>    <span class="token operator">&lt;</span>/li<span class="token operator">></span>  <span class="token punctuation">)</span><span class="token punctuation">&#125;</span><span class="token operator">&lt;</span>/ul<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id=""><a href="#" class="headerlink" title=""></a></h3><h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3><h3 id="-2"><a href="#-2" class="headerlink" title=""></a></h3><h3 id="-3"><a href="#-3" class="headerlink" title=""></a></h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> Front End </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> react </tag>
+            
+            <tag> nodejs </tag>
+            
+            <tag> javascript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>FullStackOpen_Part1</title>
+      <link href="/2022/09/29/FullStackOpen-Part1/"/>
+      <url>/2022/09/29/FullStackOpen-Part1/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Start-React-Leaning"><a href="#Start-React-Leaning" class="headerlink" title="Start React Leaning"></a>Start React Leaning</h2><p>app created with react</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">npx create-react-app part1<span class="token builtin class-name">cd</span> part1<span class="token function">npm</span> start<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><h3 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h3><p>Arrow functions and functions defined using the function keyword vary substantially when it comes to how they behave with respect to the keyword this, which refers to the object itself.</p><p>Component state, event handlers</p><p>A more complex state, debugging React apps<br>debugging React apps with React DevTools - important and useful</p><p>There are a few ways to define functions in JavaScript. Here we will use arrow functions, which are described in a newer version of JavaScript known as ECMAScript 6, also called ES6.<br>JSX<br>[The 1st rule of web development: Always keep the Developer Console open on your web browser.]</p><h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><p>Exercises 1.6.-1.14<br>unicafe : I’m not skillful enough to write code . javascript random function .<br>anecdotes : erro about define an arrary . stackoverflow help me fixed it :</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">const <span class="token punctuation">[</span>score, setScore<span class="token punctuation">]</span> <span class="token operator">=</span> useState<span class="token punctuation">(</span>new Array<span class="token punctuation">(</span>max+1<span class="token punctuation">)</span>.join<span class="token punctuation">(</span><span class="token string">'0'</span><span class="token punctuation">)</span>.split<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>.map<span class="token punctuation">(</span>parseFloat<span class="token punctuation">))</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="END"><a href="#END" class="headerlink" title="END"></a>END</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> Front End </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> react </tag>
+            
+            <tag> nodejs </tag>
+            
+            <tag> javascript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>FullStackOpen_Part0</title>
+      <link href="/2022/09/29/FullStackOpen-Part0/"/>
+      <url>/2022/09/29/FullStackOpen-Part0/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Start"><a href="#Start" class="headerlink" title="Start"></a>Start</h2><p>It’s about how to start with nodejs , java-script , introduce a base react app<br>First thing is learning how to setup enviroment.<br>Familiar with project structure</p><p>[The 1st rule of web development: Always keep the Developer Console open on your web browser.]</p><h3 id="Learning"><a href="#Learning" class="headerlink" title="Learning"></a>Learning</h3><p>ajax<br>Read &amp;&amp; create a Single page app<br>Exercises 0.1.-0.6.<br>useing online tool <a href="https://www.websequencediagrams.com/">https://www.websequencediagrams.com/</a><br>create a diagram depicting the situation where the user goes to the single page app -&gt; <a href="https://studies.cs.helsinki.fi/exampleapp/spa">https://studies.cs.helsinki.fi/exampleapp/spa</a>.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Front End </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> react </tag>
+            
+            <tag> nodejs </tag>
+            
+            <tag> javascript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Blog Create</title>
+      <link href="/2022/09/29/Blog-Create/"/>
+      <url>/2022/09/29/Blog-Create/</url>
+      
+        <content type="html"><![CDATA[<p>There have nothing .</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Start </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> blog create time </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hexo Blog Hei!</title>
+      <link href="/2022/09/28/hello-world/"/>
+      <url>/2022/09/28/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.this blog use matery theme <a href="https://codeload.github.com/blinkfox/hexo-theme-matery/zip/master">github</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>tags &amp;&amp; categories in article to write</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">tags: <span class="token punctuation">[</span>xxx , xxx , xxx<span class="token punctuation">]</span> <span class="token operator">||</span><span class="token punctuation">(</span>or<span class="token punctuation">)</span> <span class="token parameter variable">-xxx</span><span class="token parameter variable">-xxx</span><span class="token parameter variable">-xxx</span>categories: <span class="token punctuation">[</span>xxx<span class="token punctuation">]</span> <span class="token punctuation">[</span>xxx<span class="token punctuation">]</span> <span class="token punctuation">[</span>xxx<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generateor$ hexo clean <span class="token operator">&amp;&amp;</span> hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deployor$ hexo clean <span class="token operator">&amp;&amp;</span> hexo generate <span class="token operator">&amp;&amp;</span> hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> IT </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
