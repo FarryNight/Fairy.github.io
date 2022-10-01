@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="JavaMavenProject, welcome">
+    <meta name="keywords" content="How to Solve a Problem, welcome">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>JavaMavenProject | welcome</title>
+    <title>How to Solve a Problem | welcome</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">JavaMavenProject</h1>
+                    <h1 class="description center-align post-title">How to Solve a Problem</h1>
                 </div>
             </div>
         </div>
@@ -432,12 +432,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/java/">
-                                <span class="chip bg-color">java</span>
+                            <a href="/tags/thinking/">
+                                <span class="chip bg-color">thinking</span>
                             </a>
                         
-                            <a href="/tags/development/">
-                                <span class="chip bg-color">development</span>
+                            <a href="/tags/efficient/">
+                                <span class="chip bg-color">efficient</span>
                             </a>
                         
                     </div>
@@ -448,8 +448,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Bavk-End/" class="post-category">
-                                Bavk End
+                            <a href="/categories/Essay-Writing/" class="post-category">
+                                Essay Writing
                             </a>
                         
                     </div>
@@ -461,7 +461,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2022-09-29
+                    2022-09-30
                 </div>
                 
 
@@ -485,39 +485,9 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Enviroment"><a href="#Enviroment" class="headerlink" title="Enviroment"></a>Enviroment</h2><p>set up java and maven (use command line)<br>attention kit tool version<br>setup java : java jdk , java se<br>java development kit , java standard edition<br>java -version </p>
-<h3 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">mvn clean compile
-
-mvn clean <span class="token builtin class-name">test</span>
-
-mvn clean package
-
-mvn clean <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>atention maven plugin may cause problem<br>cheek <a target="_blank" rel="noopener" href="https://maven.apache.org/plugins/maven-shade-plugin/">https://maven.apache.org/plugins/maven-shade-plugin/</a></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token operator">&lt;</span>build<span class="token operator">></span>
-    <span class="token operator">&lt;</span>plugins<span class="token operator">></span>
-      <span class="token operator">&lt;</span>plugin<span class="token operator">></span>
-        <span class="token operator">&lt;</span>groupId<span class="token operator">></span>org.apache.maven.plugins<span class="token operator">&lt;</span>/groupId<span class="token operator">></span>
-        <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>maven-shade-plugin<span class="token operator">&lt;</span>/artifactId<span class="token operator">></span>
-        <span class="token operator">&lt;</span>version<span class="token operator">></span><span class="token number">3.3</span>.<span class="token operator"><span class="token file-descriptor important">0</span>&lt;</span>/version<span class="token operator">></span>
-        <span class="token operator">&lt;</span>configuration<span class="token operator">></span>
-          <span class="token operator">&lt;</span><span class="token operator">!</span>-- put your configurations here --<span class="token operator">></span>
-        <span class="token operator">&lt;</span>/configuration<span class="token operator">></span>
-        <span class="token operator">&lt;</span>executions<span class="token operator">></span>
-          <span class="token operator">&lt;</span>execution<span class="token operator">></span>
-            <span class="token operator">&lt;</span>phase<span class="token operator">></span>package<span class="token operator">&lt;</span>/phase<span class="token operator">></span>
-            <span class="token operator">&lt;</span>goals<span class="token operator">></span>
-              <span class="token operator">&lt;</span>goal<span class="token operator">></span>shade<span class="token operator">&lt;</span>/goal<span class="token operator">></span>
-            <span class="token operator">&lt;</span>/goals<span class="token operator">></span>
-          <span class="token operator">&lt;</span>/execution<span class="token operator">></span>
-        <span class="token operator">&lt;</span>/executions<span class="token operator">></span>
-      <span class="token operator">&lt;</span>/plugin<span class="token operator">></span>
-    <span class="token operator">&lt;</span>/plugins<span class="token operator">></span>
-<span class="token operator">&lt;</span>/build<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><a target="_blank" rel="noopener" href="https://maven.apache.org/plugins/maven-shade-plugin/">https://maven.apache.org/plugins/maven-shade-plugin/</a></p>
-<p><a target="_blank" rel="noopener" href="https://maven.apache.org/run.html">https://maven.apache.org/run.html</a></p>
-<p><a target="_blank" rel="noopener" href="https://maven.apache.org/run-maven/index.html">https://maven.apache.org/run-maven/index.html</a></p>
-<p><a target="_blank" rel="noopener" href="https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html">https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html</a><br>###</p>
+                <h2 id="How-to-solve-a-problems"><a href="#How-to-solve-a-problems" class="headerlink" title="How to solve a problems"></a>How to solve a problems</h2><p><a href="%E6%88%91%E6%80%9D%E6%95%85%E6%88%91%E5%9C%A8">cogito ergo sum</a></p>
+<h3 id="THe-Question"><a href="#THe-Question" class="headerlink" title="THe Question"></a>THe Question</h3><p>what is question , think about it .</p>
+<h3 id="Case"><a href="#Case" class="headerlink" title="Case"></a>Case</h3><p>Consider the boundary case</p>
 <h3 id=""><a href="#" class="headerlink" title=""></a></h3><h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3>
                 
             </div>
@@ -544,7 +514,7 @@ mvn clean <span class="token function">install</span><span aria-hidden="true" cl
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://farrynight.github.io/2022/09/29/JavaMavenProject/">http://farrynight.github.io/2022/09/29/JavaMavenProject/</a>
+                    <a href="http://farrynight.github.io/2022/09/30/How-to-Solve-a-Problem/">http://farrynight.github.io/2022/09/30/How-to-Solve-a-Problem/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -582,12 +552,12 @@ mvn clean <span class="token function">install</span><span aria-hidden="true" cl
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/java/">
-                                    <span class="chip bg-color">java</span>
+                                <a href="/tags/thinking/">
+                                    <span class="chip bg-color">thinking</span>
                                 </a>
                             
-                                <a href="/tags/development/">
-                                    <span class="chip bg-color">development</span>
+                                <a href="/tags/efficient/">
+                                    <span class="chip bg-color">efficient</span>
                                 </a>
                             
                         </div>
@@ -757,9 +727,64 @@ mvn clean <span class="token function">install</span><span aria-hidden="true" cl
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
+            <div class="card">
+                <a href="/2022/09/30/How-to-Solve-a-Problem/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="How to Solve a Problem">
+                        
+                        <span class="card-title">How to Solve a Problem</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-30
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Essay-Writing/" class="post-category">
+                                    Essay Writing
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/thinking/">
+                        <span class="chip bg-color">thinking</span>
+                    </a>
+                    
+                    <a href="/tags/efficient/">
+                        <span class="chip bg-color">efficient</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2022/09/30/LeetCode75/">
                     <div class="card-image">
@@ -777,61 +802,8 @@ mvn clean <span class="token function">install</span><span aria-hidden="true" cl
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-09-30
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Algorithms/" class="post-category">
-                                    Algorithms
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/c/">
-                        <span class="chip bg-color">c++</span>
-                    </a>
-                    
-                    <a href="/tags/syntactic-sugar/">
-                        <span class="chip bg-color">syntactic sugar</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/09/29/LeetCodeDay3/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="LeetCodeDay3">
-                        
-                        <span class="card-title">LeetCodeDay3</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-30
                             </span>
                         <span class="publish-author">
                             
