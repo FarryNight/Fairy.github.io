@@ -6,7 +6,7 @@
   <link href="http://farrynight.github.io/atom.xml" rel="self"/>
   
   <link href="http://farrynight.github.io/"/>
-  <updated>2022-10-01T08:01:38.143Z</updated>
+  <updated>2022-10-03T07:36:07.963Z</updated>
   <id>http://farrynight.github.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Learning Plan</title>
+    <link href="http://farrynight.github.io/2022/10/03/Learning-Plan/"/>
+    <id>http://farrynight.github.io/2022/10/03/Learning-Plan/</id>
+    <published>2022-10-03T06:13:59.000Z</published>
+    <updated>2022-10-03T07:36:07.963Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Planning-What-You-Wanna-Do&quot;&gt;&lt;a href=&quot;#Planning-What-You-Wanna-Do&quot; class=&quot;headerlink&quot; title=&quot;Planning What You Wanna</summary>
+        
+      
+    
+    
+    
+    <category term="Essay Writing" scheme="http://farrynight.github.io/categories/Essay-Writing/"/>
+    
+    
+    <category term="list" scheme="http://farrynight.github.io/tags/list/"/>
+    
+  </entry>
+  
+  <entry>
     <title>How to Solve a Problem</title>
     <link href="http://farrynight.github.io/2022/09/30/How-to-Solve-a-Problem/"/>
     <id>http://farrynight.github.io/2022/09/30/How-to-Solve-a-Problem/</id>
     <published>2022-09-30T14:56:16.000Z</published>
-    <updated>2022-10-01T08:01:38.143Z</updated>
+    <updated>2022-10-08T12:36:43.449Z</updated>
     
     
       
@@ -48,7 +73,7 @@
     <link href="http://farrynight.github.io/2022/09/30/LeetCode75/"/>
     <id>http://farrynight.github.io/2022/09/30/LeetCode75/</id>
     <published>2022-09-30T07:30:06.000Z</published>
-    <updated>2022-10-01T08:10:12.307Z</updated>
+    <updated>2022-10-08T11:32:13.641Z</updated>
     
     
       
@@ -156,7 +181,7 @@
     <link href="http://farrynight.github.io/2022/09/29/LeetCodeDay1/"/>
     <id>http://farrynight.github.io/2022/09/29/LeetCodeDay1/</id>
     <published>2022-09-29T14:25:10.000Z</published>
-    <updated>2022-09-29T15:17:28.278Z</updated>
+    <updated>2022-10-03T02:30:06.689Z</updated>
     
     
       
@@ -242,7 +267,7 @@
     <link href="http://farrynight.github.io/2022/09/29/FullStackOpen-Part0/"/>
     <id>http://farrynight.github.io/2022/09/29/FullStackOpen-Part0/</id>
     <published>2022-09-29T01:40:11.000Z</published>
-    <updated>2022-09-29T15:16:15.652Z</updated>
+    <updated>2022-10-03T02:29:36.678Z</updated>
     
     
       
