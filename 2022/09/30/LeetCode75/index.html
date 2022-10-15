@@ -858,7 +858,7 @@ int maxProfit<span class="token punctuation">(</span>vector<span class="token op
       //   cout<span class="token operator">&lt;&lt;</span><span class="token string">" map[s[i]] "</span><span class="token operator">&lt;&lt;</span>map<span class="token punctuation">[</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
       // <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="589-N-ary-Tree-Preorder-Traversal"><a href="#589-N-ary-Tree-Preorder-Traversal" class="headerlink" title="589. N-ary Tree Preorder Traversal"></a>589. N-ary Tree Preorder Traversal</h3><p>Nary-Tree input serialization is represented in their level order traversal. Each group of children is separated by the null value</p>
+<h3 id="589-N-ary-Tree-Preorder-Traversal"><a href="#589-N-ary-Tree-Preorder-Traversal" class="headerlink" title="589. N-ary Tree Preorder Traversal"></a>589. N-ary Tree Preorder Traversal</h3><p>Nary-Tree input serialization is represented in their level order traversal. Each group of children is separated by the null value.</p>
 <h4 id="Solution-10"><a href="#Solution-10" class="headerlink" title="Solution"></a>Solution</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">/*
 // Definition <span class="token keyword">for</span> a Node.
 class Node <span class="token punctuation">&#123;</span>
@@ -951,8 +951,79 @@ public:
         <span class="token builtin class-name">return</span> arr<span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>leetcode discuss Conquistador17<br>###</p>
-<h4 id=""><a href="#" class="headerlink" title=""></a></h4><h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3><h4 id="-2"><a href="#-2" class="headerlink" title=""></a></h4><h3 id="-3"><a href="#-3" class="headerlink" title=""></a></h3><h4 id="-4"><a href="#-4" class="headerlink" title=""></a></h4><h3 id="-5"><a href="#-5" class="headerlink" title=""></a></h3><h4 id="-6"><a href="#-6" class="headerlink" title=""></a></h4><h3 id="-7"><a href="#-7" class="headerlink" title=""></a></h3><h4 id="-8"><a href="#-8" class="headerlink" title=""></a></h4>
+<p>leetcode discuss Conquistador17</p>
+<h3 id="704-Binary-Search"><a href="#704-Binary-Search" class="headerlink" title="704. Binary Search"></a>704. Binary Search</h3><p>O(log n) runtime complexity.</p>
+<h4 id="Solution-12"><a href="#Solution-12" class="headerlink" title="Solution"></a>Solution</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">int search<span class="token punctuation">(</span>vector<span class="token operator">&lt;</span>int<span class="token operator">>&amp;</span> nums, int target<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      //int n <span class="token operator">=</span>  <span class="token operator">=</span> nums.size<span class="token punctuation">(</span><span class="token punctuation">)</span> / <span class="token number">2</span><span class="token punctuation">;</span>
+      int left, mid, right<span class="token punctuation">;</span>
+      left <span class="token operator">=</span> <span class="token number">0</span> <span class="token punctuation">;</span>
+      mid <span class="token operator">=</span> nums.size<span class="token punctuation">(</span><span class="token punctuation">)</span> / <span class="token number">2</span><span class="token punctuation">;</span>
+      right <span class="token operator">=</span> nums.size<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      while<span class="token punctuation">(</span>mid <span class="token operator">></span> left <span class="token operator">&amp;&amp;</span> mid <span class="token operator">&lt;</span> right<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+       //cout<span class="token operator">&lt;&lt;</span><span class="token string">"<span class="token entity" title="\n">\n</span>target:"</span><span class="token operator">&lt;&lt;</span>target<span class="token operator">&lt;&lt;</span><span class="token string">" left:"</span><span class="token operator">&lt;&lt;</span>left<span class="token operator">&lt;&lt;</span><span class="token string">" mid:"</span><span class="token operator">&lt;&lt;</span>mid<span class="token operator">&lt;&lt;</span><span class="token string">" right:"</span><span class="token operator">&lt;&lt;</span>right<span class="token punctuation">;</span>
+       if<span class="token punctuation">(</span>target <span class="token operator">==</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token builtin class-name">return</span> mid<span class="token punctuation">;</span>
+       if<span class="token punctuation">(</span>target <span class="token operator">></span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+         left <span class="token operator">=</span> mid<span class="token punctuation">;</span>
+         mid <span class="token operator">=</span> left + <span class="token punctuation">(</span>right - left<span class="token punctuation">)</span> / <span class="token number">2</span><span class="token punctuation">;</span>
+       <span class="token punctuation">&#125;</span>
+       if<span class="token punctuation">(</span>target <span class="token operator">&lt;</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+         right <span class="token operator">=</span> mid<span class="token punctuation">;</span>
+         mid <span class="token operator">=</span> left + <span class="token punctuation">(</span>right - left<span class="token punctuation">)</span> / <span class="token number">2</span><span class="token punctuation">;</span>
+       <span class="token punctuation">&#125;</span>
+      <span class="token punctuation">&#125;</span>
+      if<span class="token punctuation">(</span>target <span class="token operator">==</span> nums<span class="token punctuation">[</span>left<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token builtin class-name">return</span> left<span class="token punctuation">;</span>
+      <span class="token builtin class-name">return</span> -1<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>better solution</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">lone_02wolf
+<span class="token number">110</span>
+Last Edit: September <span class="token number">18</span>, <span class="token number">2021</span> <span class="token number">8</span>:03 PM
+
+<span class="token number">11</span>.8K VIEWS
+
+Upvote to motivate
+
+int search<span class="token punctuation">(</span>vector<span class="token operator">&lt;</span>int<span class="token operator">>&amp;</span> nums, int target<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        int n <span class="token operator">=</span> nums.size<span class="token punctuation">(</span><span class="token punctuation">)</span>-1<span class="token punctuation">;</span>
+        int low <span class="token operator">=</span> <span class="token number">0</span>, high <span class="token operator">=</span> n<span class="token punctuation">;</span>
+        while<span class="token punctuation">(</span> low <span class="token operator">&lt;=</span> high<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            int mid <span class="token operator">=</span> low + <span class="token punctuation">(</span>high-low<span class="token punctuation">)</span>/2<span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span> <span class="token operator">==</span> target<span class="token punctuation">)</span> <span class="token builtin class-name">return</span> mid<span class="token punctuation">;</span>
+            <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span> <span class="token operator">></span> target<span class="token punctuation">)</span> high <span class="token operator">=</span> mid -1<span class="token punctuation">;</span>
+            <span class="token keyword">else</span> low <span class="token operator">=</span> mid + <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token builtin class-name">return</span> -1<span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="278-First-Bad-Version"><a href="#278-First-Bad-Version" class="headerlink" title="278. First Bad Version"></a>278. First Bad Version</h3><p>Suppose you have n versions [1, 2, …, n] and you want to find out the first bad one, which causes all the following ones to be bad.<br>You are given an API bool isBadVersion(version) which returns whether version is bad. Implement a function to find the first bad version. You should minimize the number of calls to the API.</p>
+<h4 id="Solution-13"><a href="#Solution-13" class="headerlink" title="Solution"></a>Solution</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">int firstBadVersion<span class="token punctuation">(</span>int n<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      int left <span class="token operator">=</span> <span class="token number">0</span>, right <span class="token operator">=</span> <span class="token number">2147483648</span> - <span class="token number">1</span><span class="token punctuation">;</span> // <span class="token number">2</span>^32 - <span class="token number">1</span>
+      while<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        if<span class="token punctuation">(</span>isBadVersion<span class="token punctuation">(</span>n<span class="token punctuation">))</span><span class="token punctuation">&#123;</span>
+          right <span class="token operator">=</span> n - <span class="token number">1</span><span class="token punctuation">;</span>
+          if<span class="token punctuation">(</span>isBadVersion<span class="token punctuation">(</span>right<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token boolean">false</span><span class="token punctuation">)</span> <span class="token builtin class-name">return</span> right + <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        else<span class="token punctuation">&#123;</span>
+          left <span class="token operator">=</span> n + <span class="token number">1</span><span class="token punctuation">;</span>
+          if<span class="token punctuation">(</span>isBadVersion<span class="token punctuation">(</span>left<span class="token punctuation">))</span> <span class="token builtin class-name">return</span> left<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        n <span class="token operator">=</span> left + <span class="token punctuation">(</span>right - left<span class="token punctuation">)</span> / <span class="token number">2</span><span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span>  
+    <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>better solution:</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">int firstBadVersion<span class="token punctuation">(</span>int n<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        int lower <span class="token operator">=</span> <span class="token number">1</span>, upper <span class="token operator">=</span> n, mid<span class="token punctuation">;</span>
+        while<span class="token punctuation">(</span>lower <span class="token operator">&lt;</span> upper<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            mid <span class="token operator">=</span> lower + <span class="token punctuation">(</span>upper - lower<span class="token punctuation">)</span> / <span class="token number">2</span><span class="token punctuation">;</span>
+            if<span class="token punctuation">(</span><span class="token operator">!</span>isBadVersion<span class="token punctuation">(</span>mid<span class="token punctuation">))</span> lower <span class="token operator">=</span> mid + <span class="token number">1</span><span class="token punctuation">;</span>   /* Only one call to API */
+            <span class="token keyword">else</span> upper <span class="token operator">=</span> mid<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token builtin class-name">return</span> lower<span class="token punctuation">;</span>   /* Because there will alway be a bad version, <span class="token builtin class-name">return</span> lower here */
+    <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>whaleking1990<br>70<br>September 7, 2015 9:21 PM</p>
+<p>21.7K VIEWS</p>
+<h3 id="Not-Finished"><a href="#Not-Finished" class="headerlink" title="Not Finished"></a>Not Finished</h3>
                 
             </div>
             <hr/>

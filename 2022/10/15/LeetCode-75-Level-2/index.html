@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Learning Plan, welcome">
+    <meta name="keywords" content="LeetCode 75 Level 2, welcome">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Learning Plan | welcome</title>
+    <title>LeetCode 75 Level 2 | welcome</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Learning Plan</h1>
+                    <h1 class="description center-align post-title">LeetCode 75 Level 2</h1>
                 </div>
             </div>
         </div>
@@ -430,25 +430,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/list/">
-                                <span class="chip bg-color">list</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">No tag</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/Essay-Writing/" class="post-category">
-                                Essay Writing
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -457,7 +444,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2022-10-03
+                    2022-10-15
                 </div>
                 
 
@@ -481,11 +468,31 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Planning-What-You-Wanna-Do"><a href="#Planning-What-You-Wanna-Do" class="headerlink" title="Planning What You Wanna Do"></a>Planning What You Wanna Do</h2><h3 id="Language-Learning"><a href="#Language-Learning" class="headerlink" title="Language Learning"></a>Language Learning</h3><p>1h – after 5h 1h reviwe</p>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><p>leetcode - 1h~2h</p>
-<h3 id="Subject"><a href="#Subject" class="headerlink" title="Subject"></a>Subject</h3><p>math - 1h<br>physical - 1h<br>linear algebra - 1h<br>probability theory - 1h</p>
-<h3 id="Read"><a href="#Read" class="headerlink" title="Read"></a>Read</h3><p>book - 1h or 1&#x2F;2h</p>
+                <h2 id=""><a href="#" class="headerlink" title=""></a></h2><h3 id="202-Happy-Number"><a href="#202-Happy-Number" class="headerlink" title="202. Happy Number"></a>202. Happy Number</h3><p>A happy number is a number defined by the following process:</p>
+<p>Starting with any positive integer, replace the number by the sum of the squares of its digits.<br>Repeat the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle which does not include 1.<br>Those numbers for which this process ends in 1 are happy.</p>
+<h4 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h4><p>n%10 get last number , n&#x2F;10 let n smaller , map[100] , beacause all of the number will get smaller than 100 if the number is repeat , that mean’s we fund a loop .</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">bool isHappy<span class="token punctuation">(</span>int n<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  int <span class="token function">sum</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  int map<span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token number">0</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    while<span class="token punctuation">(</span>n <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+      <span class="token function">sum</span> <span class="token operator">+=</span> <span class="token punctuation">(</span>n % <span class="token number">10</span><span class="token punctuation">)</span> * <span class="token punctuation">(</span>n % <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      //cout<span class="token operator">&lt;&lt;</span><span class="token string">"<span class="token entity" title="\n">\n</span> sum:"</span><span class="token operator">&lt;&lt;</span>sum<span class="token punctuation">;</span>
+      n /<span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    n <span class="token operator">=</span> <span class="token function">sum</span><span class="token punctuation">;</span>
+    <span class="token function">sum</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    if<span class="token punctuation">(</span>n <span class="token operator">&lt;</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+      if<span class="token punctuation">(</span>map<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token builtin class-name">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+      <span class="token keyword">else</span> map<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    //cout<span class="token operator">&lt;&lt;</span><span class="token string">"<span class="token entity" title="\n">\n</span> n:"</span><span class="token operator">&lt;&lt;</span>n<span class="token punctuation">;</span>
+    if<span class="token punctuation">(</span>n <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token builtin class-name">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token builtin class-name">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3><h4 id="-2"><a href="#-2" class="headerlink" title=""></a></h4><h3 id="-3"><a href="#-3" class="headerlink" title=""></a></h3><h4 id="-4"><a href="#-4" class="headerlink" title=""></a></h4><h3 id="-5"><a href="#-5" class="headerlink" title=""></a></h3><h4 id="-6"><a href="#-6" class="headerlink" title=""></a></h4><h3 id="-7"><a href="#-7" class="headerlink" title=""></a></h3><h4 id="-8"><a href="#-8" class="headerlink" title=""></a></h4><h3 id="-9"><a href="#-9" class="headerlink" title=""></a></h3><h4 id="-10"><a href="#-10" class="headerlink" title=""></a></h4>
                 
             </div>
             <hr/>
@@ -511,7 +518,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://farrynight.github.io/2022/10/03/Learning-Plan/">http://farrynight.github.io/2022/10/03/Learning-Plan/</a>
+                    <a href="http://farrynight.github.io/2022/10/15/LeetCode-75-Level-2/">http://farrynight.github.io/2022/10/15/LeetCode-75-Level-2/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -548,11 +555,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/list/">
-                                    <span class="chip bg-color">list</span>
-                                </a>
-                            
+                            <span class="chip bg-color">No tag</span>
                         </div>
                     
                 </div>
@@ -720,9 +723,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
                 <a href="/2022/10/15/LeetCode-75-Level-2/">
                     <div class="card-image">
@@ -740,9 +744,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-10-15
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-15
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -751,6 +755,7 @@
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -761,13 +766,13 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/09/30/How-to-Solve-a-Problem/">
+                <a href="/2022/10/03/Learning-Plan/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="How to Solve a Problem">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Learning Plan">
                         
-                        <span class="card-title">How to Solve a Problem</span>
+                        <span class="card-title">Learning Plan</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -778,7 +783,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-03
                             </span>
                         <span class="publish-author">
                             
@@ -795,12 +800,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/thinking/">
-                        <span class="chip bg-color">thinking</span>
-                    </a>
-                    
-                    <a href="/tags/efficient/">
-                        <span class="chip bg-color">efficient</span>
+                    <a href="/tags/list/">
+                        <span class="chip bg-color">list</span>
                     </a>
                     
                 </div>

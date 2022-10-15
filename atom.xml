@@ -6,7 +6,7 @@
   <link href="http://farrynight.github.io/atom.xml" rel="self"/>
   
   <link href="http://farrynight.github.io/"/>
-  <updated>2022-10-03T07:36:07.963Z</updated>
+  <updated>2022-10-15T12:32:48.251Z</updated>
   <id>http://farrynight.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode 75 Level 2</title>
+    <link href="http://farrynight.github.io/2022/10/15/LeetCode-75-Level-2/"/>
+    <id>http://farrynight.github.io/2022/10/15/LeetCode-75-Level-2/</id>
+    <published>2022-10-15T12:24:34.000Z</published>
+    <updated>2022-10-15T12:32:48.251Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id=&quot;202-Happy-Number&quot;&gt;&lt;a href=&quot;#202-Happy-Number&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Learning Plan</title>
@@ -46,7 +67,7 @@
     <link href="http://farrynight.github.io/2022/09/30/How-to-Solve-a-Problem/"/>
     <id>http://farrynight.github.io/2022/09/30/How-to-Solve-a-Problem/</id>
     <published>2022-09-30T14:56:16.000Z</published>
-    <updated>2022-10-09T17:10:33.938Z</updated>
+    <updated>2022-10-15T12:22:58.608Z</updated>
     
     
       
@@ -73,7 +94,7 @@
     <link href="http://farrynight.github.io/2022/09/30/LeetCode75/"/>
     <id>http://farrynight.github.io/2022/09/30/LeetCode75/</id>
     <published>2022-09-30T07:30:06.000Z</published>
-    <updated>2022-10-09T17:09:12.607Z</updated>
+    <updated>2022-10-15T12:22:39.153Z</updated>
     
     
       
