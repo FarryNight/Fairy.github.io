@@ -492,7 +492,110 @@
   <span class="token builtin class-name">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3><h4 id="-2"><a href="#-2" class="headerlink" title=""></a></h4><h3 id="-3"><a href="#-3" class="headerlink" title=""></a></h3><h4 id="-4"><a href="#-4" class="headerlink" title=""></a></h4><h3 id="-5"><a href="#-5" class="headerlink" title=""></a></h3><h4 id="-6"><a href="#-6" class="headerlink" title=""></a></h4><h3 id="-7"><a href="#-7" class="headerlink" title=""></a></h3><h4 id="-8"><a href="#-8" class="headerlink" title=""></a></h4><h3 id="-9"><a href="#-9" class="headerlink" title=""></a></h3><h4 id="-10"><a href="#-10" class="headerlink" title=""></a></h4>
+<h3 id="54-Spiral-Matrix"><a href="#54-Spiral-Matrix" class="headerlink" title="54. Spiral Matrix"></a>54. Spiral Matrix</h3><p>Given an m x n matrix, return all elements of the matrix in spiral order.</p>
+<h4 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution"></a>Solution</h4><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">vector&lt;int&gt; spiralOrder(vector&lt;vector&lt;int&gt;&gt;&amp; m) &#123;
+  vector&lt;int&gt; result;
+  int in &#x3D; m.size() , jn &#x3D; m[0].size();
+  int left &#x3D; 0 , down &#x3D; 0 , right &#x3D; jn - 1 , up &#x3D; in - 1 , step &#x3D; 1;
+  while( left &lt;&#x3D; right &amp;&amp; down &lt;&#x3D; up )&#123;
+    int i &#x3D; left , j &#x3D; left;
+    if(step &#x3D;&#x3D; 1)&#123;
+      for( ; j &lt;&#x3D; right ; ++j )&#123;
+        result.push_back(m[i][j]);
+      &#125;
+      down++;
+      step++;
+    &#125;
+    else if(step &#x3D;&#x3D; 2)&#123;
+      for( j &#x3D; right , i &#x3D; down ; i &lt;&#x3D; up ; ++i )&#123;
+        &#x2F;&#x2F;cout&lt;&lt;m[i][j]&lt;&lt;&quot; i , j &quot;&lt;&lt;i&lt;&lt;&quot; &quot;&lt;&lt;j;
+        result.push_back(m[i][j]);
+      &#125;
+      right--;
+      step++;
+    &#125;
+    else if(step &#x3D;&#x3D; 3)&#123;
+      for( i &#x3D; up , j &#x3D; right ; j &gt;&#x3D; left ; --j )&#123;
+        result.push_back(m[i][j]);
+      &#125;
+      up--;
+      step++;
+    &#125;
+    else if(step &#x3D;&#x3D; 4)&#123;
+      for( j &#x3D; left , i &#x3D; up ; i &gt;&#x3D; down ; --i )&#123;
+        result.push_back(m[i][j]);
+      &#125;
+      left++;
+      step &#x3D; 1;
+    &#125;
+  &#125;
+  return result;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>discuss</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">vector&lt;int&gt; spiralOrder(vector&lt;vector&lt;int&gt;&gt;&amp; matrix) &#123;
+    int n&#x3D;matrix.size();
+    int m&#x3D;matrix[0].size();
+    int left&#x3D;0,right&#x3D;m-1,bottom&#x3D;n-1,top&#x3D;0;
+    int direction&#x3D;1;
+    vector&lt;int&gt; v;
+    while(left&lt;&#x3D;right &amp;&amp; top&lt;&#x3D;bottom)
+    &#123;
+        if(direction&#x3D;&#x3D;1)
+        &#123;
+            for(int i&#x3D;left;i&lt;&#x3D;right;i++) v.push_back(matrix[top][i]);
+            direction&#x3D;2;
+            top++;
+        &#125;
+        
+        else if(direction&#x3D;&#x3D;2)
+        &#123;
+            for(int i&#x3D;top;i&lt;&#x3D;bottom;i++) v.push_back(matrix[i][right]);
+            direction&#x3D;3;
+            right--;
+        &#125;
+        
+        else if(direction&#x3D;&#x3D;3)
+        &#123;
+            for(int i&#x3D;right;i&gt;&#x3D;left;i--) v.push_back(matrix[bottom][i]);
+            direction&#x3D;4;
+            bottom--;
+        &#125;
+        
+        else if(direction&#x3D;&#x3D;4)
+        &#123;
+            for(int i&#x3D;bottom;i&gt;&#x3D;top;i--) v.push_back(matrix[i][left]);
+            direction&#x3D;1;
+            left++;
+        &#125;
+    &#125;
+    return v; 
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>C++ | 0ms faster than 100% | Easy solution with proper explanation<br>rv237<br>368<br>Last Edit: December 20, 2020 4:52 PM</p>
+<p>11.4K VIEWS</p>
+<p>A concise C++ implementation based on Directions<br>stellari<br>5661<br>Last Edit: October 21, 2018 7:01 AM</p>
+<p>50.6K VIEWS</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">vector&lt;int&gt; spiralOrder(vector&lt;vector&lt;int&gt;&gt;&amp; matrix) &#123;
+    vector&lt;vector&lt;int&gt; &gt; dirs&#123;&#123;0, 1&#125;, &#123;1, 0&#125;, &#123;0, -1&#125;, &#123;-1, 0&#125;&#125;;
+    vector&lt;int&gt; res;
+    int nr &#x3D; matrix.size();     if (nr &#x3D;&#x3D; 0) return res;
+    int nc &#x3D; matrix[0].size();  if (nc &#x3D;&#x3D; 0) return res;
+    
+    vector&lt;int&gt; nSteps&#123;nc, nr-1&#125;;
+    
+    int iDir &#x3D; 0;   &#x2F;&#x2F; index of direction.
+    int ir &#x3D; 0, ic &#x3D; -1;    &#x2F;&#x2F; initial position
+    while (nSteps[iDir%2]) &#123;
+        for (int i &#x3D; 0; i &lt; nSteps[iDir%2]; ++i) &#123;
+            ir +&#x3D; dirs[iDir][0]; ic +&#x3D; dirs[iDir][1];
+            res.push_back(matrix[ir][ic]);
+        &#125;
+        nSteps[iDir%2]--;
+        iDir &#x3D; (iDir + 1) % 4;
+    &#125;
+    return res;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3><h4 id="-2"><a href="#-2" class="headerlink" title=""></a></h4><h3 id="-3"><a href="#-3" class="headerlink" title=""></a></h3><h4 id="-4"><a href="#-4" class="headerlink" title=""></a></h4><h3 id="-5"><a href="#-5" class="headerlink" title=""></a></h3><h4 id="-6"><a href="#-6" class="headerlink" title=""></a></h4><h3 id="-7"><a href="#-7" class="headerlink" title=""></a></h3><h4 id="-8"><a href="#-8" class="headerlink" title=""></a></h4>
                 
             </div>
             <hr/>

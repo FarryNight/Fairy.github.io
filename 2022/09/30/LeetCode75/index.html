@@ -903,27 +903,26 @@ public:
 <p>stack function , using vector ,<br>MrQuin :<br>From the code we use a stack to simulate the process:<br>we push 1 to the stack.<br>we pop 1 out, add 1 into result; Add the children of 1 into stack. The value in the stack will be 3, 2 and 2 at the top position;<br>we pop 2 out and add it to result; Then we add children of 2 into stack. So the stack will be like 3, 5, 4 and with 4 at the top.<br>we pop 4 and 5 out of stack since they are leaf node. Currently result will be like 1, 2, 4, 5.<br>we pop 3 out and add its children into stack. The stack is like 7, 6 with 6 at the top.<br>we pop 6 and 7 out and the stack becomes empty.<br>So the final result will be 1, 2, 4, 5, 3, 6, 7</p>
 <h3 id="102-Binary-Tree-Level-Order-Traversal"><a href="#102-Binary-Tree-Level-Order-Traversal" class="headerlink" title="102. Binary Tree Level Order Traversal"></a>102. Binary Tree Level Order Traversal</h3><p>Given the root of a binary tree, return the level order traversal of its nodes’ values. (i.e., from left to right, level by level).</p>
 <h4 id="Solution-11"><a href="#Solution-11" class="headerlink" title="Solution"></a>Solution</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span>int<span class="token operator">>></span> levelOrder<span class="token punctuation">(</span>TreeNode *root<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-      vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span>int<span class="token operator">>></span> result<span class="token punctuation">;</span>
-      if<span class="token punctuation">(</span>root <span class="token operator">==</span> nullptr<span class="token punctuation">)</span> <span class="token builtin class-name">return</span> result<span class="token punctuation">;</span>
-      
-      TreeNode *cur<span class="token punctuation">;</span>
-      queue<span class="token operator">&lt;</span>TreeNode *<span class="token operator">></span> que<span class="token punctuation">;</span>
-      que.push<span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
-      while<span class="token punctuation">(</span><span class="token operator">!</span>que.empty<span class="token punctuation">(</span><span class="token punctuation">))</span><span class="token punctuation">&#123;</span>
-        vector<span class="token operator">&lt;</span>int<span class="token operator">></span> value<span class="token punctuation">;</span>
-        
-        for<span class="token punctuation">(</span>int i <span class="token operator">=</span> que.size<span class="token punctuation">(</span><span class="token punctuation">)</span> - <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">>=</span> <span class="token number">0</span> <span class="token punctuation">;</span> i --<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-          cur <span class="token operator">=</span> que.front<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-          que.pop<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-          if<span class="token punctuation">(</span>cur-<span class="token operator">></span>left<span class="token punctuation">)</span> que.push<span class="token punctuation">(</span>cur-<span class="token operator">></span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
-          if<span class="token punctuation">(</span>cur-<span class="token operator">></span>right<span class="token punctuation">)</span> que.push<span class="token punctuation">(</span>cur-<span class="token operator">></span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
-          value.push_back<span class="token punctuation">(</span>cur-<span class="token operator">></span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span>
-        result.push_back<span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token punctuation">&#125;</span>
-      
-      <span class="token builtin class-name">return</span> result<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+  vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span>int<span class="token operator">>></span> result<span class="token punctuation">;</span>
+  if<span class="token punctuation">(</span>root <span class="token operator">==</span> nullptr<span class="token punctuation">)</span> <span class="token builtin class-name">return</span> result<span class="token punctuation">;</span>
+  
+  TreeNode *cur<span class="token punctuation">;</span>
+  queue<span class="token operator">&lt;</span>TreeNode *<span class="token operator">></span> que<span class="token punctuation">;</span>
+  que.push<span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  while<span class="token punctuation">(</span><span class="token operator">!</span>que.empty<span class="token punctuation">(</span><span class="token punctuation">))</span><span class="token punctuation">&#123;</span>
+    vector<span class="token operator">&lt;</span>int<span class="token operator">></span> value<span class="token punctuation">;</span>
+    
+    for<span class="token punctuation">(</span>int i <span class="token operator">=</span> que.size<span class="token punctuation">(</span><span class="token punctuation">)</span> - <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">>=</span> <span class="token number">0</span> <span class="token punctuation">;</span> i --<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+      cur <span class="token operator">=</span> que.front<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      que.pop<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      if<span class="token punctuation">(</span>cur-<span class="token operator">></span>left<span class="token punctuation">)</span> que.push<span class="token punctuation">(</span>cur-<span class="token operator">></span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      if<span class="token punctuation">(</span>cur-<span class="token operator">></span>right<span class="token punctuation">)</span> que.push<span class="token punctuation">(</span>cur-<span class="token operator">></span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      value.push_back<span class="token punctuation">(</span>cur-<span class="token operator">></span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    result.push_back<span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token builtin class-name">return</span> result<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>checkout </p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">class Solution <span class="token punctuation">&#123;</span>
 public:
