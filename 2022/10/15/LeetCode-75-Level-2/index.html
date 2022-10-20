@@ -615,7 +615,87 @@
     return res;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id=""><a href="#" class="headerlink" title=""></a></h3><h4 id="-1"><a href="#-1" class="headerlink" title=""></a></h4><h3 id="-2"><a href="#-2" class="headerlink" title=""></a></h3><h4 id="-3"><a href="#-3" class="headerlink" title=""></a></h4><h3 id="-4"><a href="#-4" class="headerlink" title=""></a></h3><h4 id="-5"><a href="#-5" class="headerlink" title=""></a></h4><h3 id="-6"><a href="#-6" class="headerlink" title=""></a></h3><h4 id="-7"><a href="#-7" class="headerlink" title=""></a></h4>
+<h3 id="1706-Where-Will-the-Ball-Fall"><a href="#1706-Where-Will-the-Ball-Fall" class="headerlink" title="1706. Where Will the Ball Fall"></a>1706. Where Will the Ball Fall</h3><h4 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution"></a>Solution</h4><p>you need to know the ball’s  moving action search from 0 to cloumn lenght , search every cloumn if it will fall , the count will equal row lenght</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;
+public:
+    vector&lt;int&gt; findBall(vector&lt;vector&lt;int&gt;&gt;&amp; grid) &#123;
+      int m &#x3D; grid.size() , n &#x3D; grid[0].size() - 1;
+      int il &#x3D; 0 , ir &#x3D; n , step &#x3D; 0 , count &#x3D; 0 ;
+      vector&lt;int&gt; res;
+      while( n + 1 )&#123;
+        &#x2F;&#x2F;cout&lt;&lt;&quot;\n il &quot;&lt;&lt; il ;
+        &#x2F;&#x2F;cout&lt;&lt;&quot;\n i il count &quot;;
+        for( int i &#x3D; 0 ; i &lt; m ; ++i)&#123;
+          &#x2F;&#x2F;cout&lt;&lt;&quot;\n grid[i][il]:&quot;&lt;&lt; grid[i][il] &lt;&lt;&quot; &quot;;
+          if(grid[i][il] &#x3D;&#x3D; 1 &amp;&amp; il + 1 &lt;&#x3D; ir &amp;&amp; grid[i][il] &#x3D;&#x3D; grid[i][il + 1])&#123;
+            &#x2F;&#x2F;cout&lt;&lt;&quot;\n &quot;&lt;&lt; i &lt;&lt;&quot; &quot;&lt;&lt; il &lt;&lt; &quot; &quot; &lt;&lt; count;
+            ++il;
+            ++count;
+            continue;
+          &#125;
+          if(grid[i][il] &#x3D;&#x3D; -1 &amp;&amp; il - 1 &gt;&#x3D; 0 &amp;&amp; grid[i][il] &#x3D;&#x3D; grid[i][il - 1])&#123;
+            &#x2F;&#x2F;cout&lt;&lt;&quot;\n &quot;&lt;&lt; i &lt;&lt;&quot; &quot;&lt;&lt; il &lt;&lt; &quot; &quot; &lt;&lt; count;
+            --il;
+            ++count;
+            continue;
+          &#125;
+          &#x2F;&#x2F;else break;
+        &#125;
+        if(count &gt;&#x3D; m) res.push_back(il);
+        else res.push_back(-1);
+        il &#x3D; ++step;
+        --n;
+        count &#x3D; 0;
+      &#125;
+      return res;
+    &#125;
+&#125;;
+
+&#x2F;*
+if(grid[i][il] &#x3D;&#x3D; 1 &amp;&amp; grid[i][il] &#x3D;&#x3D; grid[i][il + 1])&#123;
+            cout&lt;&lt;&quot;\n i il &quot;&lt;&lt; i &lt;&lt;&quot; &quot;&lt;&lt; il;
+              ++il;
+              continue;
+            &#125;
+          else if(grid[i][il] &#x3D;&#x3D; -1 &amp;&amp; grid[i][il] &#x3D;&#x3D; grid[i][il - 1])&#123;
+            --il;
+            continue;
+          &#125;
+          else if(grid[i][il] &#x3D;&#x3D; 1 &amp;&amp; grid[i][il] !&#x3D; grid[i][il + 1])&#123;
+            res.push_back(-1);
+            break;
+          &#125;
+          else if(grid[i][il] &#x3D;&#x3D; -1 &amp;&amp; grid[i][il] !&#x3D; grid[i][il - 1])&#123;
+            res.push_back(-1);
+            break;
+          &#125;
+          else res.push_back(1);
+          
+          [[1,1,1,-1,-1],[1,1,1,-1,-1],[-1,-1,-1,1,1],[1,1,1,1,-1],[-1,-1,-1,-1,-1]]
+[[-1]]
+[[1,1,1,1,1,1],[-1,-1,-1,-1,-1,-1],[1,1,1,1,1,1],[-1,-1,-1,-1,-1,-1]]
+*&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>lee215<br>167146<br>December 27, 2020 3:04 PM</p>
+<p>14.2K VIEWS<br>[Java&#x2F;C++&#x2F;Python] Solution with Explanation</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">vector&lt;int&gt; findBall(vector&lt;vector&lt;int&gt;&gt;&amp; grid) &#123;
+        int m &#x3D; grid.size(), n &#x3D; grid[0].size();
+        vector&lt;int&gt; res;
+        for (int i &#x3D; 0; i &lt; n; ++i) &#123;
+            int i1 &#x3D; i, i2;
+            for (int j &#x3D; 0; j &lt; m; ++j) &#123;
+                i2 &#x3D; i1 + grid[j][i1];
+                if (i2 &lt; 0 || i2 &gt;&#x3D; n || grid[j][i2] !&#x3D; grid[j][i1]) &#123;
+                    i1 &#x3D; -1;
+                    break;
+                &#125;
+                i1 &#x3D; i2;
+            &#125;
+            res.push_back(i1);
+        &#125;
+        return res;
+    &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>great solution</p>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><h4 id="-1"><a href="#-1" class="headerlink" title=""></a></h4><h3 id="-2"><a href="#-2" class="headerlink" title=""></a></h3><h4 id="-3"><a href="#-3" class="headerlink" title=""></a></h4><h3 id="-4"><a href="#-4" class="headerlink" title=""></a></h3><h4 id="-5"><a href="#-5" class="headerlink" title=""></a></h4>
                 
             </div>
             <hr/>
