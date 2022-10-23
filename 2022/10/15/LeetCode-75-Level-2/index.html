@@ -652,29 +652,10 @@ public:
 &#125;;
 
 &#x2F;*
-if(grid[i][il] &#x3D;&#x3D; 1 &amp;&amp; grid[i][il] &#x3D;&#x3D; grid[i][il + 1])&#123;
-            cout&lt;&lt;&quot;\n i il &quot;&lt;&lt; i &lt;&lt;&quot; &quot;&lt;&lt; il;
-              ++il;
-              continue;
-            &#125;
-          else if(grid[i][il] &#x3D;&#x3D; -1 &amp;&amp; grid[i][il] &#x3D;&#x3D; grid[i][il - 1])&#123;
-            --il;
-            continue;
-          &#125;
-          else if(grid[i][il] &#x3D;&#x3D; 1 &amp;&amp; grid[i][il] !&#x3D; grid[i][il + 1])&#123;
-            res.push_back(-1);
-            break;
-          &#125;
-          else if(grid[i][il] &#x3D;&#x3D; -1 &amp;&amp; grid[i][il] !&#x3D; grid[i][il - 1])&#123;
-            res.push_back(-1);
-            break;
-          &#125;
-          else res.push_back(1);
-          
-          [[1,1,1,-1,-1],[1,1,1,-1,-1],[-1,-1,-1,1,1],[1,1,1,1,-1],[-1,-1,-1,-1,-1]]
+[[1,1,1,-1,-1],[1,1,1,-1,-1],[-1,-1,-1,1,1],[1,1,1,1,-1],[-1,-1,-1,-1,-1]]
 [[-1]]
 [[1,1,1,1,1,1],[-1,-1,-1,-1,-1,-1],[1,1,1,1,1,1],[-1,-1,-1,-1,-1,-1]]
-*&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+*&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>lee215<br>167146<br>December 27, 2020 3:04 PM</p>
 <p>14.2K VIEWS<br>[Java&#x2F;C++&#x2F;Python] Solution with Explanation</p>
 <pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">vector&lt;int&gt; findBall(vector&lt;vector&lt;int&gt;&gt;&amp; grid) &#123;
@@ -695,7 +676,92 @@ if(grid[i][il] &#x3D;&#x3D; 1 &amp;&amp; grid[i][il] &#x3D;&#x3D; grid[i][il + 1
         return res;
     &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>great solution</p>
-<h3 id=""><a href="#" class="headerlink" title=""></a></h3><h4 id="-1"><a href="#-1" class="headerlink" title=""></a></h4><h3 id="-2"><a href="#-2" class="headerlink" title=""></a></h3><h4 id="-3"><a href="#-3" class="headerlink" title=""></a></h4><h3 id="-4"><a href="#-4" class="headerlink" title=""></a></h3><h4 id="-5"><a href="#-5" class="headerlink" title=""></a></h4>
+<h3 id="14-Longest-Common-Prefix"><a href="#14-Longest-Common-Prefix" class="headerlink" title="14. Longest Common Prefix"></a>14. Longest Common Prefix</h3><p>Write a function to find the longest common prefix string amongst an array of strings.</p>
+<p>If there is no common prefix, return an empty string “”.</p>
+<h4 id="solution"><a href="#solution" class="headerlink" title="solution"></a>solution</h4><p>compaire every string of index if not equal return res ;</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;
+public:
+    string longestCommonPrefix(vector&lt;string&gt;&amp; strs) &#123;
+      int map[128] &#x3D; &#123; 0 &#125;;
+      int n &#x3D; strs.size() , i &#x3D; 0 , len &#x3D; strs[i].size() ;
+      string res;
+      &#x2F;&#x2F;cout&lt;&lt;n&lt;&lt;endl;
+      if( n &#x3D;&#x3D; 1)&#123;
+        for(int i &#x3D; 0 ; i &lt; len ; ++i) res.push_back(strs[0][i]);
+        return res;
+      &#125;
+      int nextlen &#x3D; strs[i + 1].size();
+      for(int j &#x3D; 0 ; j &lt; len &amp;&amp; j &lt; nextlen; ++j)&#123;
+        for(i &#x3D; 0 ; i &lt; n - 1 ; ++i)&#123;
+          nextlen &#x3D; strs[i + 1].size();
+          if(strs[i][j] &#x3D;&#x3D; strs[i+1][j])&#123;
+            map[ strs[i][j] ] ++;
+          &#125;
+          else return res;
+          if(map[ strs[i][j] ] !&#x3D; 0 &amp;&amp; map[ strs[i][j] ] % (n - 1) &#x3D;&#x3D; 0 )&#123;
+            res.push_back(strs[i][j]);
+          &#125;
+        &#125;
+      &#125;
+      return res;
+    &#125;
+&#125;;
+&#x2F;*
+[&quot;flower&quot;,&quot;flow&quot;,&quot;flight&quot;]
+[&quot;ab&quot;,&quot;ba&quot;,&quot;ca&quot;,&quot;da&quot;]
+[&quot;a&quot;]
+[&quot;dog&quot;,&quot;racecar&quot;,&quot;car&quot;]
+[&quot;&quot;]
+[&quot;aabbbaaaaaabbbaaaa&quot;,&quot;aabbbaaaaaabbbaaaa&quot;,&quot;aabbbaaaaaabbbaaaa&quot;,&quot;aabbbaaaaaabbbaaaa&quot;,&quot;aabbbaaaaaabbbaaaa&quot;,&quot;aabbbaaaaaabbbaaaa&quot;,&quot;aabbbaaaa&quot;,&quot;aabbbaaaa&quot;,&quot;aabbbaaaa&quot;,&quot;aabbbaaaa&quot;]
+[&quot;a&quot;,&quot;ba&quot;]
+[&quot;cir&quot;,&quot;car&quot;]
+[&quot;aabbbaaaa&quot;,&quot;aabbbaaaa&quot;,&quot;aabbbaaaa&quot;,&quot;aabbbaaaa&quot;,&quot;aabbbaaaa&quot;,&quot;aabbbaaaa&quot;,&quot;aabbbaaaa&quot;,&quot;aabbbaaaa&quot;,&quot;aabbbaaaa&quot;,&quot;aabbbaaaa&quot;]
+
+*&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>more simple way </p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;
+public:
+    string longestCommonPrefix(vector&lt;string&gt;&amp; str) &#123;
+        int n &#x3D; str.size();
+        if(n&#x3D;&#x3D;0) return &quot;&quot;;
+        
+        string ans  &#x3D; &quot;&quot;;
+        sort(begin(str), end(str));
+        string a &#x3D; str[0];
+        string b &#x3D; str[n-1];
+        
+        for(int i&#x3D;0; i&lt;a.size(); i++)&#123;
+            if(a[i]&#x3D;&#x3D;b[i])&#123;
+                ans &#x3D; ans + a[i];
+            &#125;
+            else&#123;
+                break;
+            &#125;
+        &#125;
+        
+        return ans;
+        
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><h4 id="solution-1"><a href="#solution-1" class="headerlink" title="solution"></a>solution</h4><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#96;&#96;&#96;
+
+### 
+
+
+#### solution
+&#96;&#96;&#96; c++<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3><h4 id="solution-2"><a href="#solution-2" class="headerlink" title="solution"></a>solution</h4><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#96;&#96;&#96;
+
+### 
+
+
+#### solution
+&#96;&#96;&#96; c++<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="-2"><a href="#-2" class="headerlink" title=""></a></h3><h4 id="solution-3"><a href="#solution-3" class="headerlink" title="solution"></a>solution</h4><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
                 
             </div>
             <hr/>
