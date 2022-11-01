@@ -744,7 +744,61 @@ public:
     &#125;
 &#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id=""><a href="#" class="headerlink" title=""></a></h3><h4 id="solution-1"><a href="#solution-1" class="headerlink" title="solution"></a>solution</h4><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#96;&#96;&#96;
+<h3 id="43-Multiply-Strings"><a href="#43-Multiply-Strings" class="headerlink" title="43. Multiply Strings"></a>43. Multiply Strings</h3><p>Given two non-negative integers num1 and num2 represented as strings, return the product of num1 and num2, also represented as a string.</p>
+<h4 id="solution-1"><a href="#solution-1" class="headerlink" title="solution"></a>solution</h4><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;
+public:
+    string multiply(string num1, string num2) &#123;
+      if(num1 &#x3D;&#x3D; &quot;0&quot; || num2 &#x3D;&#x3D; &quot;0&quot;) return &quot;0&quot;;
+      string res &#x3D; &quot;&quot;;
+      int l1 &#x3D; num1.size() , l2 &#x3D; num2.size() ;
+      vector&lt;int&gt; ans(l1 + l2 , 0); &#x2F;&#x2F; how much digital for this result;
+      for(int i &#x3D; l1 - 1 ; i &gt;&#x3D; 0 ; --i)&#123;
+        for(int j &#x3D; l2 - 1 ; j &gt;&#x3D; 0 ; --j)&#123;
+          int n1 &#x3D; num1[i] - &#39;0&#39;, n2 &#x3D; num2[j] - &#39;0&#39;;
+          ans[i + j + 1] +&#x3D; n1 * n2;
+          ans[i + j] +&#x3D; ans[i + j + 1] &#x2F; 10;
+          ans[i + j + 1] %&#x3D; 10;
+        &#125;
+      &#125;
+      int i &#x3D; 0;
+      while( ans[i] &#x3D;&#x3D; 0)++i;
+      while(i &lt; ans.size())&#123;
+        res+&#x3D; to_string(ans[i]);
+        ++i;
+      &#125;
+      return res;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>im not work this problem out<br>so i learing from this :<br>C++ Simple, Easy and Short Solution, Brief Explanation<br>233<br>YehudisK’s avatar<br>YehudisK</p>
+<p>12638<br>Last Edit: November 7, 2021 8:18 AM</p>
+<p>13.1K VIEWS</p>
+<p>Idea:<br>We are using regular mathematucal vertical multiplication.<br>We loop from the end of both numbers, multiply the digits one at a time and save the carry in the next cell for the next iteration.<br>The loop at the end constructs the result string - we skip 0s at the beginning and add the numbers.</p>
+<p>Time Complexity: O(mn)<br>Space Complexity: O(n+m)</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;
+public:
+    string multiply(string num1, string num2) &#123;
+        if (num1 &#x3D;&#x3D; &quot;0&quot; || num2 &#x3D;&#x3D; &quot;0&quot;) return &quot;0&quot;;
+        
+        vector&lt;int&gt; res(num1.size()+num2.size(), 0);
+        
+        for (int i &#x3D; num1.size()-1; i &gt;&#x3D; 0; i--) &#123;
+            for (int j &#x3D; num2.size()-1; j &gt;&#x3D; 0; j--) &#123;
+                res[i + j + 1] +&#x3D; (num1[i]-&#39;0&#39;) * (num2[j]-&#39;0&#39;);
+                res[i + j] +&#x3D; res[i + j + 1] &#x2F; 10;
+                res[i + j + 1] %&#x3D; 10;
+            &#125;
+        &#125;
+        
+        int i &#x3D; 0;
+        string ans &#x3D; &quot;&quot;;
+        while (res[i] &#x3D;&#x3D; 0) i++;
+        while (i &lt; res.size()) ans +&#x3D; to_string(res[i++]);
+        
+        return ans;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><h4 id="solution-2"><a href="#solution-2" class="headerlink" title="solution"></a>solution</h4><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#96;&#96;&#96;
 
 ### 
 
@@ -752,15 +806,13 @@ public:
 #### solution
 &#96;&#96;&#96; c++<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3><h4 id="solution-2"><a href="#solution-2" class="headerlink" title="solution"></a>solution</h4><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#96;&#96;&#96;
+<h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3><h4 id="solution-3"><a href="#solution-3" class="headerlink" title="solution"></a>solution</h4><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#96;&#96;&#96;
 
 ### 
 
 
 #### solution
 &#96;&#96;&#96; c++<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="-2"><a href="#-2" class="headerlink" title=""></a></h3><h4 id="solution-3"><a href="#solution-3" class="headerlink" title="solution"></a>solution</h4><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
                 
             </div>
